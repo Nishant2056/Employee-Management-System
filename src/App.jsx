@@ -4,7 +4,6 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import AppTitle from "./components/Title/AppTitle.jsx";
 import SearchBar from "./components/SearchBar/SearchBar.jsx";
 import Table from "./components/Data/Table.jsx";
-import AddUserModal from "./components/SearchBar/AddUserModal.jsx";
 import { useState } from "react";
 
 function App() {
@@ -45,7 +44,6 @@ function App() {
       <AppTitle></AppTitle>
       <SearchBar handleAddRecord={handleAddRecord}></SearchBar>
       <Table employees={employees} deleteOnClick={handleDeleteRecord}></Table>
-      <AddUserModal></AddUserModal>
     </>
   );
 }
