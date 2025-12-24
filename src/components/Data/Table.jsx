@@ -2,7 +2,7 @@ import css from "./Table.module.css";
 import TableNoData from "./TableNoData";
 import TableRow from "./TableRow";
 
-const Table = ({ employees, deleteOnClick }) => {
+const Table = ({ employees, deleteOnClick, handleEditRecord }) => {
   return (
     <table className={`${css.dataContainer} table container`}>
       <caption
@@ -37,6 +37,7 @@ const Table = ({ employees, deleteOnClick }) => {
               data={emp}
               index={index}
               deleteOnClick={deleteOnClick}
+              handleEditRecord={handleEditRecord}
             />
           ))
         )}
