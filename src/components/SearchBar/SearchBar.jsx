@@ -103,11 +103,7 @@ const SearchBar = ({ handleAddRecord }) => {
                   />
                 </div>
                 <div className="modal-footer d-flex justify-content-around">
-                  <button
-                    type="button"
-                    className="btn btn-secondary"
-                    data-bs-dismiss="modal"
-                  >
+                  <button className="btn btn-secondary" data-bs-dismiss="modal">
                     Cancel
                   </button>
                   <button className="btn btn-primary">Register</button>
