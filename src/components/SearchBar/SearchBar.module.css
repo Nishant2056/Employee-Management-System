@@ -1,0 +1,32 @@
+.searchBarContainer{
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 12px 18px;
+  margin-top: 20px;
+}
+ .searchBarContainer :global(.input-group){
+  align-items: center;
+  width: calc(100% - 200px) !important;
+}
+.searchBarContainer :global(.input-group input){
+  width: 100% ;
+  height: 100%;
+  border-radius: 6px;
+  border: 1px solid gray;
+}
+.searchBarContainer :global(.input-group input:focus){
+  outline: none;
+}
+.searchBarContainer button{
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+}
+.searchBarContainer button svg{
+  height: 24px;
+  width: 24px;
+}
