@@ -9,27 +9,30 @@ import { useState } from "react";
 
 function App() {
   const [employees, setEmployees] = useState([
-    {
-      name: "Nishant Bhurtel",
-      email: "bhurtelnishant@gmail.com",
-      phone: "9825767766",
-      position: "Developer",
-    },
-    {
-      name: "Narayan Gyawali",
-      email: "narayangyawali@gmail.com",
-      phone: "9855754225",
-      position: "Designer",
-    },
-    {
-      name: "Sameer Ali",
-      email: "sameerali@gmail.com",
-      phone: "9825755896",
-      position: "QA",
-    },
+    // {
+    //   name: "Nishant Bhurtel",
+    //   email: "bhurtelnishant@gmail.com",
+    //   phone: "9825767766",
+    //   position: "Developer",
+    // },
+    // {
+    //   name: "Narayan Gyawali",
+    //   email: "narayangyawali@gmail.com",
+    //   phone: "9855754225",
+    //   position: "Designer",
+    // },
+    // {
+    //   name: "Sameer Ali",
+    //   email: "sameerali@gmail.com",
+    //   phone: "9825755896",
+    //   position: "QA",
+    // },
   ]);
 
   const handleAddRecord = (newRecord) => {
+    if (!newRecord.name || !newRecord.email || !newRecord.phone) {
+      return;
+    }
     const updatedEmployees = [...employees, newRecord];
     setEmployees(updatedEmployees);
   };
