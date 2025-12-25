@@ -1,8 +1,8 @@
 import { IoIosAdd } from "react-icons/io";
 import css from "./SearchBar.module.css";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
-const SearchBar = ({ handleAddRecord }) => {
+const SearchBar = ({ handleAddRecord, handleOnChange }) => {
   const closeBtnRef = useRef(null);
   const nameRef = useRef(null);
   const emailRef = useRef(null);
@@ -27,12 +27,24 @@ const SearchBar = ({ handleAddRecord }) => {
     closeBtnRef.current.click();
   };
 
+  const [target, setTarget] = useState("");
+
+  const inputChanging = (e) => {
+    setTarget(e.target.value);
+    handleOnChange(e.target.value);
+  };
+
   return (
     <div className={`${css.searchBarContainer} container d-flex gap-3`}>
       {/* <input type="text" placeholder="Search by Name, email or position" /> */}
 
       <div className="input-group flex-nowrap">
-        <input type="text" placeholder="Search by Name, email or position" />
+        <input
+          type="text"
+          placeholder="Search by Name, email or position"
+          value={target}
+          onChange={inputChanging}
+        />
       </div>
       <button
         type="button"

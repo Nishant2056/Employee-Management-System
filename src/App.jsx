@@ -28,6 +28,20 @@ function App() {
     },
   ]);
 
+  const [searchText, setSearchText] = useState("");
+
+  const handleOnChange = (textIncoming) => {
+    setSearchText(textIncoming);
+  };
+
+  const filteredEmployees = employees.filter(
+    (emp) =>
+      emp.name.toLowerCase().includes(searchText.toLowerCase()) ||
+      emp.email.toLowerCase().includes(searchText.toLowerCase()) ||
+      emp.position.toLowerCase().includes(searchText.toLowerCase()) ||
+      emp.phone.toLowerCase().includes(searchText.toLowerCase())
+  );
+
   const handleAddRecord = (newRecord) => {
     if (!newRecord.name || !newRecord.email || !newRecord.phone) {
       return;
@@ -39,11 +53,18 @@ function App() {
   const handleDeleteRecord = (phone) => {
     setEmployees(employees.filter((emp) => emp.phone !== phone));
   };
+
   return (
     <>
       <AppTitle></AppTitle>
-      <SearchBar handleAddRecord={handleAddRecord}></SearchBar>
-      <Table employees={employees} deleteOnClick={handleDeleteRecord}></Table>
+      <SearchBar
+        handleAddRecord={handleAddRecord}
+        handleOnChange={handleOnChange}
+      ></SearchBar>
+      <Table
+        employees={filteredEmployees}
+        deleteOnClick={handleDeleteRecord}
+      ></Table>
     </>
   );
 }
